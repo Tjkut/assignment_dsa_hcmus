@@ -4,25 +4,18 @@
 
 int orderedLinearSearch(float arr[], int size, float value)
 {
-    int left = 0;
-    int right = size - 1;
-    while (left <= right)
+    for (int i = 0; i < size; i++)
     {
-        int mid = (left + right) / 2;
-        if (arr[mid] == value)
+        if (arr[i] == value)
         {
-            return mid;
+            return i;
         }
-        else if (arr[mid] < value)
+        else if (arr[i] > value)
         {
-            left = mid + 1;
-        }
-        else
-        {
-            right = mid - 1;
+            return -1;
         }
     }
-    return -1;
+    return -1
 }
 int main()
 {
